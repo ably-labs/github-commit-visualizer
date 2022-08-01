@@ -24,7 +24,7 @@ To use this application to visualize your own git commits, you will need to depl
   a. Add the env variable `ABLY_API_KEY` to your deployed app.
   b. Add the env variable `GITHUB_WEBHOOK_SECRET` to your deployed app (containing a password you make up)
 5. Configure a GitHub Web Hook
-  a. Add a GitHub webhook pointing to your deployed app - `https://your-deployed-app.com/api/github-webhook` (the URL of your app will differ - but the `API` location will always be the same - `/api/github-webhook`)
+  a. Add a GitHub webhook pointing to your deployed app - `https://your-deployed-app.com/api/github-hook` (the URL of your app will differ - but the `API` location will always be the same - `/api/github-hook`)
   b. Set the `SECRET` to the same password you configured in your applications environment variable.
 6. Visit the URL and watch your commits fly in!
 
