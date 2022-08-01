@@ -196,4 +196,10 @@
     border: 2px solid #dbdbdc;
     background-color: #292831;
   }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 3vw;
+    }
+  }
 </style>
