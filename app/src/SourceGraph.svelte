@@ -63,6 +63,21 @@
   };
 </script>
 
-Nodes: {history.nodes.size}
+<div class="nodes"><span>{history.nodes.size}</span> nodes</div>
 
 <div bind:this={target} style="width: 100%; height: 93vh;" />
+
+<style>
+  .nodes {
+    position: absolute;
+    bottom: 2.1em;
+    right: 60px;
+  }
+  .nodes span {
+    display: inline-block;
+    width: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+</style>

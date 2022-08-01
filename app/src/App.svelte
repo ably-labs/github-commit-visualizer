@@ -173,6 +173,7 @@
     border-radius: 3px;
     list-style: none;
     background-color: rgba(255, 255, 255, 0.2);
+    padding-bottom: 2.6em;
   }
 
   .key-item {
