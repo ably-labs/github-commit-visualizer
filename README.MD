@@ -137,3 +137,5 @@ You could:
 - Deploy an AWS lambda function with contents of ./api/github-hook to accept the callbacks (unsupported, but achieves the same effect as the previous two suggestions)
 
 Note: The `github-hook` code contains no logic (it just accepts, verifies and forwards the hook data to an `ably` channel). You can rely on a deployed instance of this hook as long as **your ably API key and channel names are consistent**.
+
+[![Ably logo](https://static.ably.dev/badge-black.svg?github-commit-visualiser)](https://ably.com)
