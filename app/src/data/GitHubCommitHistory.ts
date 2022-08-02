@@ -25,18 +25,27 @@ export class GitHubCommitHistory {
     }
 
     private processFilePaths(message: GitHubHook) {
-        for (const commit of message.commits) {
+        const commits = message.commits || [];
+        
+        if (!message?.repository?.name) {
+            return;
+        }
+
+        for (const commit of commits) {
+            commit.added = commit.added || [];
+            commit.modified = commit.modified || [];
+            commit.removed = commit.removed || [];
+            
             this.ensureRepositoryNodeExists(message.repository.name);
 
             const touchedFiles = [...commit.added, ...commit.modified]; 
-            const deletedFiles = commit.removed || [];
 
             for (const file of touchedFiles) {
                 const id = `${message.repository.name}/${file}`;
                 this.createNodesForPath(id, message.repository.name);
             }
 
-            for (const file of deletedFiles) {
+            for (const file of commit.removed) {
                 this.deleteNodeAndEdges(`${message.repository.name}/${file}`);                
             }
         }

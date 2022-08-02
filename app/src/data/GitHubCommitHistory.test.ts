@@ -19,6 +19,53 @@ describe("GitHubCommitHistory", () => {
         expect(tree).toBeDefined();
     });
 
+    it("toTree, no commits in git hook, doesn't crash", () => {      
+        const hookData = gitHookWith();
+        delete hookData.commits;
+
+        sut.push(hookData);
+
+        expect(sut.toNodesAndEdges()).toBeDefined();
+    });
+
+    it("toTree, no files added in commit, doesn't crash", () => {      
+        const hookData = gitHookWith();
+        delete hookData.commits[0].added;
+
+        sut.push(hookData);
+
+        expect(sut.toNodesAndEdges()).toBeDefined();
+    });
+
+    it("toTree, no files modified in commit, doesn't crash", () => {      
+        const hookData = gitHookWith();
+        delete hookData.commits[0].modified;
+
+        sut.push(hookData);
+
+        expect(sut.toNodesAndEdges()).toBeDefined();
+    });
+
+    it("toTree, no files removed in commit, doesn't crash", () => {      
+        const hookData = gitHookWith();
+        delete hookData.commits[0].removed;
+
+        sut.push(hookData);
+
+        expect(sut.toNodesAndEdges()).toBeDefined();
+    });
+    
+    it("toTree, no repository reference in commit, doesn't crash and skips commit", () => {      
+        const hookData = gitHookWith();
+        delete hookData.repository;
+
+        sut.push(hookData);
+        const { nodes } = sut.toNodesAndEdges();
+
+        expect(nodes).toBeDefined();
+        expect([...nodes.values()].length).toBe(0);
+    });
+
     it("toTree, single file committed, node present", () => {        
         sut.push(gitHookWith(["file.txt"]));
 
