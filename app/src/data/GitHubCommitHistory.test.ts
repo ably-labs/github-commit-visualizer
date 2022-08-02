@@ -59,6 +59,7 @@ describe("GitHubCommitHistory", () => {
         const hookData = gitHookWith();
         delete hookData.repository;
 
+        sut.push(hookData);
         const { nodes } = sut.toNodesAndEdges();
 
         expect(nodes).toBeDefined();

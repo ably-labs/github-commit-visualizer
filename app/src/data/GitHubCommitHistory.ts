@@ -26,15 +26,15 @@ export class GitHubCommitHistory {
 
     private processFilePaths(message: GitHubHook) {
         const commits = message.commits || [];
+        
+        if (!message?.repository?.name) {
+            return;
+        }
 
         for (const commit of commits) {
             commit.added = commit.added || [];
             commit.modified = commit.modified || [];
             commit.removed = commit.removed || [];
-
-            if (!message?.repository?.name) {
-                continue;
-            }
             
             this.ensureRepositoryNodeExists(message.repository.name);
 
