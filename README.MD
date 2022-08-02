@@ -1,6 +1,6 @@
 # GitHub Visualizer
 
-A Real-Time GitHub commit visualizer inspired by [Gource](https://gource.io/), witten in [Svelte](https://svelte.dev/), [vis.js](https://visjs.org/) and [Ably](https://ably.com/).
+A Real-Time GitHub commit visualizer inspired by [Gource](https://gource.io/), written in [Svelte](https://svelte.dev/), [vis.js](https://visjs.org/) and [Ably](https://ably.com/).
 
 Deploying this application to a supported hosting provider gives you a real-time visualization of the commits to your GitHub organization or repository. It would be perfect for large screens, lobby displays, and places where it might be useful to see your efforts being visualised!
 
@@ -30,7 +30,7 @@ To use this application to visualize your own git commits, you will need to depl
 
 ---
 
-## Getting and Managing and Ably API key
+## Getting and Managing an Ably API key
 
 <a name="ablyaccount"></a>
 
