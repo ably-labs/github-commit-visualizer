@@ -155,6 +155,7 @@
     margin-left: 0.5rem;
     height: 3rem;
   }
+
   .visualiser-logo {
     height: 3rem;
     margin-right: 1rem;
@@ -195,6 +196,7 @@
     margin-right: 1rem;
     border-radius: 5px;
   }
+
   .file:before {
     border: 2px solid #dbdbdc;
     background-color: #292831;
@@ -211,7 +213,7 @@
   .github {
     height: 30px;
     margin-left: 10px;
-    background: url("github.svg") no-repeat;
+    background: url("/github.svg") no-repeat;
     background-size: 30px;
     color: transparent;
   }
