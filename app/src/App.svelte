@@ -7,7 +7,7 @@
 
   let history = new GitHubCommitHistory();
 
-  useChannel("[?rewind=5]github-events", (message) => {
+  useChannel("[?rewind=10]github-events", (message) => {
     onMessageReceived(message.data);
   });
 
@@ -212,7 +212,7 @@
 
   .github {
     height: 30px;
-    margin-left: 10px;
+    margin-left: 8px;
     background: url("/github.svg") no-repeat;
     background-size: 30px;
     color: transparent;
