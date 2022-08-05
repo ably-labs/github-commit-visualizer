@@ -24,12 +24,6 @@
     };
 
     network = new vis.Network(target, state, options);
-
-    setInterval(() => {
-      network.fit({
-        animation: { duration: 1500, easingFunction: "linear" },
-      });
-    }, 5000);
   });
 
   $: {
@@ -60,6 +54,7 @@
     );
 
     displayedEdges.remove(edgesToRemove);
+    network?.fit();
   };
 </script>
 
