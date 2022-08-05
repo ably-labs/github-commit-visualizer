@@ -118,6 +118,9 @@
     <li class="repo key-item">repository</li>
     <li class="file key-item">file</li>
   </ul>
+  <footer>
+    Make your own on <a href="https://github.com/ably-labs/github-commit-visualizer" class="github">GitHub</a>
+  </footer>
 </div>
 
 <style>
@@ -160,7 +163,7 @@
   .button-container {
     position: absolute;
     bottom: 1rem;
-    left: 1rem;
+    left: 40%;
     z-index: 1;
   }
 
@@ -195,6 +198,22 @@
   .file:before {
     border: 2px solid #dbdbdc;
     background-color: #292831;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .github {
+    height: 30px;
+    margin-left: 10px;
+    background: url("github.svg") no-repeat;
+    background-size: 30px;
+    color: transparent;
   }
 
   @media (max-width: 600px) {
