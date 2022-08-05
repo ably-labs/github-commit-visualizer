@@ -7,7 +7,7 @@
 
   let history = new GitHubCommitHistory();
 
-  useChannel("github-events", (message) => {
+  useChannel("[?rewind=5]github-events", (message) => {
     onMessageReceived(message.data);
   });
 
