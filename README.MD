@@ -4,7 +4,7 @@ A Real-Time GitHub commit visualizer inspired by [Gource](https://gource.io/), w
 
 Deploying this application to a supported hosting provider gives you a real-time visualization of the commits to your GitHub organization or repository. It would be perfect for large screens, lobby displays, and places where it might be useful to see your efforts being visualised!
 
-<img src="docs/ui.png" alt="ui preview" style="box-shadow: -2px -2px 5px 5px;" />
+<img src="docs/ui.png" alt="ui preview" />
 
 ## Pre-requisites
 
@@ -19,14 +19,13 @@ To use this application to visualize your own git commits, you will need to depl
 
 1. Create an [Ably account and API key](#ablyaccount)
 2. Create a GitHub account with sufficient privileges to add a WebHook to your account or repository
-3. Fork this repository into your GitHub account
-4. [Deploy with either Netlify or Azure Static Web Apps](#deploy)
+3. [Deploy with either Netlify or Azure Static Web Apps](#deploy)
   a. Add the env variable `ABLY_API_KEY` to your deployed app.
   b. Add the env variable `GITHUB_WEBHOOK_SECRET` to your deployed app (containing a password you make up)
-5. Configure a GitHub Web Hook
+4. Configure a GitHub Web Hook
   a. Add a GitHub webhook pointing to your deployed app - `https://your-deployed-app.com/api/github-hook` (the URL of your app will differ - but the `API` location will always be the same - `/api/github-hook`)
   b. Set the `SECRET` to the same password you configured in your applications environment variable.
-6. Visit the URL and watch your commits fly in!
+5. Visit the URL and watch your commits fly in!
 
 ---
 
@@ -51,7 +50,7 @@ You'll need to configure settings on both GitHub and your Netlify/Azure to make 
 
 ### Deployment with Netlify
 
-<a href="https://app.netlify.com/start/deploy" style="background: url(https://www.netlify.com/img/deploy/button.svg) no-repeat center; color: transparent; display: inline-block; height: 3rem;width: 150px">Deploy to Netlify</a>
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ably-labs/github-commit-visualizer)
 
 We've bundled a `netlify.toml` file in the root of the repository, which will configure your build and deployment settings.
 **You will need to add two environment configuration settings** using the netlify UI:
