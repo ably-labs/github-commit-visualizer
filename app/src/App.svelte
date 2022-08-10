@@ -44,7 +44,7 @@
       src="/githubvis.png"
       alt="github commit visualiser logo"
       class="visualiser-logo"
-    />GitHub Commit Visualiser
+    />GitHub Commit Visualizer
   </h1>
   <h2>
     by <a href="https://ably.com/"><svg

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { afterUpdate, onMount } from "svelte";
   import { GitHubCommitHistory } from "./data/GitHubCommitHistory";
   import { DataSet } from "vis-data";
   import { styledNode } from "./StyledNodeFactory";
@@ -29,7 +29,7 @@
   $: {
     history && updateNodes();
   }
-
+  
   const updateNodes = () => {
     const previous = { nodes: displayedNodes, edges: displayedEdges };
     const current = history.toNodesAndEdges();
@@ -54,7 +54,9 @@
     );
 
     displayedEdges.remove(edgesToRemove);
-    network?.fit();
+    network?.fit({
+      animation: false,
+    });
   };
 </script>
 
@@ -62,17 +64,85 @@
 
 <div bind:this={target} style="width: 100%; height: 93vh;" />
 
+<!-- delete this to remove explanation-->
+<div class="what">
+  <input type="checkbox" class="what-checkbox" id="checkbox">
+  <label for="checkbox" class="what-label">What is this?</label>
+  <div class="what-content">
+    <h2>What is this?</h2>
+    <p>This graph visualises the work of the Ably engineering team in realtime. Every node that you see is a commit that the developers have made to an Ably repository. It is written in Svelte, with VisJS and Ably. It would be perfect for large screens, lobby displays, and places where it might be useful to see your efforts being visualised!
+    </p>
+    <p>If you'd like to visualise your organization's work, you can deploy your own version of this application from the <a class="link" href="https://github.com/ably-labs/github-commit-visualizer">Visualizer GitHub repository</a></p>
+  </div>
+</div>
+
 <style>
   .nodes {
     position: absolute;
     bottom: 2.1em;
     right: 60px;
   }
+
   .nodes span {
     display: inline-block;
     width: 4rem;
     text-align: center;
     font-size: 1.4rem;
     font-weight: bold;
+  }
+
+  .what-checkbox {
+    display: none;
+  }
+
+  .what-label {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    display: block;
+    height: 24px;
+    width: 24px;
+    color: transparent;
+    font-size: 1px;
+    background: url("/what.png") no-repeat right center;
+    background-size: contain;
+    z-index: 2;
+  }
+
+  .what-content {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    color: #03020D;
+    transition: max-height 0.5s ease-in-out;
+  }
+
+  .what-content h2 {
+    margin: 1rem 2rem;
+    max-width: 800px;
+  }
+
+  .what-content p {
+    margin: 1rem 2rem;
+    max-width: 800px;
+  }
+
+  .what-checkbox:checked ~ .what-content {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .link {
+    display: block;
+    margin-bottom: 2rem;
+    color: #ff5416;
+  }
+  .link:after {
+    content: ".";
+    color: #03020D;
   }
 </style>
