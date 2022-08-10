@@ -107,6 +107,7 @@
     background: url("/what.png") no-repeat right center;
     background-size: contain;
     z-index: 2;
+    cursor: pointer;
   }
 
   .what-content {
@@ -133,7 +134,7 @@
 
   .what-checkbox:checked ~ .what-content {
     height: auto;
-    max-height: 300px;
+    max-height: 350px;
   }
 
   .link {
