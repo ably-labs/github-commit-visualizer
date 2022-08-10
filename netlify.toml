@@ -9,3 +9,7 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[template.environment]
+  ABLY_API_KEY = "change me to your Ably Api key"
+  GITHUB_WEBHOOK_SECRET = "change me to your github webhook secret"

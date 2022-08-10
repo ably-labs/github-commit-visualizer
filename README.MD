@@ -51,6 +51,8 @@ You'll need to configure settings on both GitHub and your Netlify/Azure to make 
 
 ### Deployment with Netlify
 
+<a href="https://app.netlify.com/start/deploy" style="background: url(https://www.netlify.com/img/deploy/button.svg) no-repeat center; color: transparent; display: inline-block; height: 3rem;width: 150px">Deploy to Netlify</a>
+
 We've bundled a `netlify.toml` file in the root of the repository, which will configure your build and deployment settings.
 **You will need to add two environment configuration settings** using the netlify UI:
 
