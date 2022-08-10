@@ -219,8 +219,19 @@
   }
 
   @media (max-width: 600px) {
-    h1 {
-      font-size: 3vw;
+    header {
+      padding: 0.5rem;
     }
+    h1 {
+      font-size: 4vw;
+      text-align: left;
+    }
+    h2 {
+    align-items: center;
+  }
+
+  .ably-logo {
+    height: 2.5rem;
+  }
   }
 </style>
