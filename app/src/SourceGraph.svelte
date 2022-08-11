@@ -72,7 +72,7 @@
     <h2>What is this?</h2>
     <p>This graph visualises the work of the Ably engineering team in realtime. Every node that you see is a commit that the developers have made to an Ably repository. It is written in Svelte, with VisJS and Ably. It would be perfect for large screens, lobby displays, and places where it might be useful to see your efforts being visualised!
     </p>
-    <p>If you'd like to visualise your organization's work, you can deploy your own version of this application from the <a class="link" href="https://github.com/ably-labs/github-commit-visualizer">Visualizer GitHub repository</a></p>
+   <p>If you'd like to visualise your organization's work, you can deploy your own version of this application from the <a class="link" href="https://github.com/ably-labs/github-commit-visualizer">Visualizer GitHub repository</a>, and read about how this was built <a href="https://ably.com/blog/visualize-your-commits-in-realtime-with-ably-and-github-webhooks" class="link">over on the Ably Blog</a>.</p>
   </div>
 </div>
 
@@ -135,15 +135,10 @@
   .what-checkbox:checked ~ .what-content {
     height: auto;
     max-height: 350px;
+    padding-bottom: 1rem;
   }
-
   .link {
-    display: block;
     margin-bottom: 2rem;
     color: #ff5416;
-  }
-  .link:after {
-    content: ".";
-    color: #03020D;
   }
 </style>
