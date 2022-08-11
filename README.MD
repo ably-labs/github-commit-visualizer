@@ -2,6 +2,8 @@
 
 A Real-Time GitHub commit visualizer inspired by [Gource](https://gource.io/), written in [Svelte](https://svelte.dev/), [vis.js](https://visjs.org/) and [Ably](https://ably.com/).
 
+[Read about how it was built in my recent blog post](https://ably.com/blog/visualize-your-commits-in-realtime-with-ably-and-github-webhooks)
+
 Deploying this application to a supported hosting provider gives you a real-time visualization of the commits to your GitHub organization or repository. It would be perfect for large screens, lobby displays, and places where it might be useful to see your efforts being visualised!
 
 <img src="docs/ui.png" alt="ui preview" />
