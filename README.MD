@@ -104,17 +104,18 @@ You can repeat these steps repository-by-repository if you prefer.
 
 ## Local Development
 
-To run the app locally, once cloned, you will need to create an `.env` file in `/api` directory to configure your `ABLY_API_KEY` and `GITHUB_WEBHOOK_SECRET`:
+To run the app locally, once cloned, you will need to create an `.env` file in root directory, to configure your `ABLY_API_KEY` and `GITHUB_WEBHOOK_SECRET`:
 
 ```bash
 ABLY_API_KEY=your-ably-api-key
 GITHUB_WEBHOOK_SECRET=a-secret-password-that-you-make-up
 ```
 
-Local dev uses **vite** as a development server, firstly install the dependencies then run the start script:
+Next install the Netlify CLI, to run the serverless functions locally, then install the dependencies and run the start script:
 
 ```bash
-npm i
+npm install netlify-cli -g
+npm install
 npm run start
 ```
 

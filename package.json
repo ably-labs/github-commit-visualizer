@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "prestart": "cd api && npm install",
-    "start": "run-p dev:api dev:app",
+    "start": "netlify dev -c \"npm run dev:app\" --targetPort 8080",
     "dev:app": "vite",
     "dev:api": "npm run start --prefix api",
     "test": "vitest run",
     "check": "svelte-check --tsconfig ./tsconfig.json",
+    "start:azure": "run-p dev:api dev:app",
     "build:azure": "npx vite build",
     "build:netlify": "npx vite build && cd api && npm i && npm run build"
   },
